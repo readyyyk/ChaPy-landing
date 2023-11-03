@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --gradient-shadow: linear-gradient(
+            45deg,
+            #fb0094,
+            #0000ff,
+            #00ff00,
+            #ffff00,
+            #ff0000,
+            #fb0094,
+            #0000ff,
+            #00ff00,
+            #ffff00,
+            #ff0000
+    );
+}
+
+.shadow-animate:before,
+.shadow-animate:after {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background: var(--gradient-shadow);
+    background-size: 400%;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    z-index: -1;
+    animation: g-shadow 20s linear infinite;
+    @apply rounded-md
+}
+
+.shadow-animate:after {
+    filter: blur(10px);
+}
+
+@keyframes g-shadow {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 300% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+
+.hero-transform {
+    transform: rotate3d(0, 1, 0, 25deg);
+    translate: 7% 0;
+}
+
+@media (width < 768px) {
+    .hero-transform {
+        transform: rotate3d(0, 1, 0, 8deg);
+        translate: 3% 0;
+        max-width: 60dvw;
+        margin: auto;
+    }
+}
+
+.feature-mask {
+    mask-image: linear-gradient(165deg, rgba(0, 0, 0, 1), transparent 70%);
+    mask-position: top;
+}
