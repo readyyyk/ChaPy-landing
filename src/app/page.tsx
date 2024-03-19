@@ -12,7 +12,7 @@ import {
 import Image from 'next/image';
 import Link from 'next/link';
 
-import aes from '@/assets/aes.png';
+import aes from '@/assets/AES.png';
 import logo from '@/assets/chapy192.png';
 import heroImage from '@/assets/chapy-example.webp';
 import Btn from '@/components/btn';
