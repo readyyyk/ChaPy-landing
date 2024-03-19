@@ -1,44 +1,40 @@
-module.exports = {
-  root: true,
-  env: { browser: true, es2020: true },
-  extends: [
-    'plugin:@typescript-eslint/stylistic-type-checked',
-    'plugin:@typescript-eslint/recommended-type-checked',
-    'plugin:tailwindcss/recommended',
-    'plugin:react-hooks/recommended',
-    'google',
-  ],
-  parser: '@typescript-eslint/parser',
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: './',
-  },
-  plugins: ['react-refresh'],
-  settings: {
-    'react': {
-      'version': 'detect'
+/** @type {import("eslint").Linter.Config} */
+const config = {
+    parser: '@typescript-eslint/parser',
+    parserOptions: {
+        project: true,
     },
-  },
-  rules: {
-    'react-refresh/only-export-components': [
-      'warn',
-      { allowConstantExport: true },
+    plugins: ['@typescript-eslint'],
+    extends: [
+        'next/core-web-vitals',
+        'plugin:@typescript-eslint/recommended-type-checked',
+        'plugin:@typescript-eslint/stylistic-type-checked',
     ],
-    'indent': ['error', 4],
-    'max-len': ['error', {
-      'ignoreStrings': true,
-      'ignorePattern': 'd=\'*$',
-    }],
-    'linebreak-style': 0,
-  },
-  ignorePatterns: [
-    'dist/',
-    '.eslintrc.cjs',
-    'vite-env.d.ts',
-    'main.tsx',
-    '*config*',
-    '*.md',
-  ],
-}
+    rules: {
+        // These opinionated rules are enabled in stylistic-type-checked above.
+        // Feel free to reconfigure them to your own preference.
+        '@typescript-eslint/array-type': 'off',
+        '@typescript-eslint/consistent-type-definitions': 'off',
+
+        '@typescript-eslint/consistent-type-imports': [
+            'warn',
+            {
+                prefer: 'type-imports',
+                fixStyle: 'inline-type-imports',
+            },
+        ],
+        '@typescript-eslint/no-unused-vars': [
+            'warn',
+            { argsIgnorePattern: '^_' },
+        ],
+        '@typescript-eslint/require-await': 'off',
+        '@typescript-eslint/no-misused-promises': [
+            'error',
+            {
+                checksVoidReturn: { attributes: false },
+            },
+        ],
+    },
+};
+
+module.exports = config;
