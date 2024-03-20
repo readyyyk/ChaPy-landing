@@ -9,6 +9,7 @@ const config = {
     output: 'export',
     distDir: 'dist',
     images: {
+        unoptimized: true,
         dangerouslyAllowSVG: true,
         remotePatterns: [
             {
