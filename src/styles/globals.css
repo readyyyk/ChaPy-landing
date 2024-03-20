@@ -69,6 +69,7 @@
 @layer base {
     * {
         @apply border-border;
+        /*border: red solid 2px;*/
     }
     body {
         @apply bg-background text-foreground;

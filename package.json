@@ -7,7 +7,7 @@
         "build": "next build",
         "dev": "next dev",
         "lint": "next lint",
-        "start": "serve public"
+        "start": "serve dist"
     },
     "dependencies": {
         "@t3-oss/env-nextjs": "^0.9.2",

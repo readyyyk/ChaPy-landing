@@ -62,13 +62,25 @@ const config = {
                 sm: 'calc(var(--radius) - 4px)',
             },
             keyframes: {
-                marquee: {
-                    '0%': { transform: 'translateX(0%)' },
-                    '100%': { transform: 'translateX(-100%)' },
-                },
-                'marquee-y': {
-                    '0%': { transform: 'translateY(0%)' },
-                    '100%': { transform: 'translateY(-100%)' },
+                inWhite: {
+                    from: {
+                        backgroundColor: '#ffffff00',
+                    },
+                    '35%': {
+                        backgroundColor: '#ffffff00',
+                    },
+                    '45%': {
+                        backgroundColor: '#ffffff',
+                    },
+                    '55%': {
+                        backgroundColor: '#ffffff',
+                    },
+                    '65%': {
+                        backgroundColor: '#ffffff00',
+                    },
+                    to: {
+                        backgroundColor: '#ffffff00',
+                    },
                 },
                 moveX: {
                     from: {
@@ -195,6 +207,20 @@ const config = {
                         left: '40%',
                     },
                 },
+
+                in: {
+                    from: { opacity: '0' },
+                    to: { opacity: '1' },
+                },
+                out: {
+                    from: { opacity: '1' },
+                    to: { opacity: '0' },
+                },
+                scroll: {
+                    to: {
+                        transform: 'translate(calc(-50% - 0.5rem))',
+                    },
+                },
             },
             animation: {
                 'real-bounce':
@@ -204,7 +230,7 @@ const config = {
                 'real-bounce-2':
                     'moveX 4.5s linear infinite alternate, moveY 4s 1s linear infinite alternate',
                 'real-bounce-3':
-                    'moveX 4.5s linear infinite alternate, moveY 3.5s 1s linear infinite alternate',
+                    'moveX 3.5s linear infinite alternate, moveY 3.5s 1s linear infinite alternate',
 
                 'feature-text': 'feature-text 10s infinite',
                 'feature-aes': 'feature-aes 10s infinite',
@@ -212,6 +238,12 @@ const config = {
 
                 'accordion-down': 'accordion-down 0.2s ease-out',
                 'accordion-up': 'accordion-up 0.2s ease-out',
+
+                'in-white':
+                    'inWhite var(--animation-duration, 2s) linear var(--animation-delay, 0s) infinite',
+                hidenseek: 'in 1s ease-in infinite alternate',
+                hidenseek2: 'in 1s 1s ease-in infinite alternate',
+                scroll: 'scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite',
             },
         },
     },
@@ -230,7 +262,7 @@ const config = {
                     }),
                     'bg-grid-small': (value: string) => ({
                         backgroundImage: `url("${svgToDataUri(
-                            `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="8" height="8" fill="none" stroke="${value}"><path d="M0 .5H31.5V32"/></svg>`,
+                            `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="10.5" height="10.5" fill="none" stroke="${value}"><path d="M0 .5H31.5V32"/></svg>`,
                         )}")`,
                     }),
                     'bg-dot': (value: string) => ({
