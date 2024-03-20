@@ -34,8 +34,8 @@ export default function HomePage() {
     return (
         <main>
             {/*  bg-[size:36px_36px] bg-[image:linear-gradient(to_right,#77777777_1px,transparent_1px),linear-gradient(to_bottom,#77777777_1px,transparent_1px);] */}
-            <section className="h-[117dvh] md:h-[190dvh] lg:h-[240dvh] snap-start">
-                <div className="absolute dark:bg-grid-white/[0.2] bg-grid-background/[0.2] w-full h-[100dvh] left-0 top-0">
+            <section className="h-[117lvh] md:h-[190lvh] lg:h-[240lvh] snap-start">
+                <div className="absolute dark:bg-grid-white/[0.2] bg-grid-background/[0.2] w-full h-[100lvh] left-0 top-0">
                     <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_10%,black)]"></div>
                 </div>
                 <MacbookScroll
@@ -306,7 +306,9 @@ export default function HomePage() {
 
             <footer className="min-h-96 mx-auto mt-48 bg-grid-small-red-600 bg-center relative flex justify-center items-end overflow-hidden">
                 <div className="absolute w-[200%] md:w-auto -translate-x-1/4 md:translate-x-0 pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_bottom,transparent_40%,black_70%)]"></div>
-                <h2 className={`mb-14 text-2xl text-center ${font.className}`}>
+                <h2
+                    className={`mb-14 text-2xl text-center shadow bg-[radial-gradient(ellipse_at_top,#000000aa,transparent)] ${font.className}`}
+                >
                     Made with patience <br /> by{' '}
                     <Link
                         href="https://github.com/readyyyk"
