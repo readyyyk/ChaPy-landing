@@ -41,9 +41,15 @@ export default function HomePage() {
                 <MacbookScroll
                     title={
                         <span>
-                            {' '}
                             Communicate Freely, Completely Private with{' '}
-                            <i>ChaPy</i>{' '}
+                            <i className="font-mono relative">
+                                <u className="text-sky-600 underline underline-offset-8 decoration-4 decoration-wavy absolute left-0 z-10">
+                                    <pre>{'     '}</pre>
+                                </u>
+                                <span className="text-[#1da1f2] relative z-20">
+                                    ChaPy
+                                </span>
+                            </i>
                         </span>
                     }
                     badge={
