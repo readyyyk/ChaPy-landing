@@ -22,6 +22,9 @@ export const metadata = {
             'Messaging service with anonymous access and decentralized data storage. To join chat chat just enter a valid link with the chat id',
         images: '/opengraph-image.png',
     },
+    other: {
+        'yandex-verification': 'ed83dbdb1e4610d6',
+    },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

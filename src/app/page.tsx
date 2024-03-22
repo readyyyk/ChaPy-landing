@@ -288,7 +288,7 @@ export default function HomePage() {
                             <div
                                 key={'testimonial' + i}
                                 className={
-                                    'border-2 border-neutral-600/70 relative p-5 w-96 max-w-[90dvw]' +
+                                    'border-2 border-neutral-600/70 relative p-5 w-96 max-w-[90dvw]' + //  scrollbar-hide resize overflow-visible
                                     (arr.length % 2 && i === arr.length - 1
                                         ? ' lg:col-span-2'
                                         : '')
